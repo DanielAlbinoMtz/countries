@@ -1,0 +1,26 @@
+<div class="container mt-3">
+    <label for="">Buscador de banderas</label>
+    <input type="text" class="form-control" #buscar [formControl]="search">
+
+
+    <div class="row card-columns mt-3">
+        <div class="card col-md-4" *ngFor="let flag of flags" style="padding: 15px;">
+            <a [routerLink]="['detail', flag.name.common]">
+            <img [src]="flag.flags.png" alt="">
+            <div class="card-body">
+                <h5 class="card-title">País: {{flag.name.common}}</h5>
+                <p class="card-text">Capital: {{flag.capital}}</p>
+            </div>
+        </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="modalShow d-flex align-items-center justify-content-center" *ngIf="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+

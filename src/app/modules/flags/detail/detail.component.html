@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <div class="text-center">
+        <img [src]="foto" alt="">
+        <h2>País: {{flag?.name.common}}</h2>
+        <p>Capital: {{flag?.capital}}</p>
+        <p>Población: {{flag?.population}}</p>
+        <p>Idiomas:</p>
+            <p *ngFor="let idioma of languages" style="font-weight: bold; margin-top: -10px;">
+                {{idioma}}
+            </p>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Continente</h3>
+            <p *ngFor="let conti of flag?.continents">{{conti}}</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Área</h3>
+            <p>{{flag?.area}}</p>
+        </div>
+    </div>
+</div>
